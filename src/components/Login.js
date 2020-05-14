@@ -1,5 +1,13 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
+
+const LoginForm = styled.form`
+
+height: 100%;
+width: 100%;
+
+`;
 
 
 class Login extends React.Component {
@@ -40,8 +48,7 @@ render() {
 
     return (
 
-    <div>
-    <form onSubmit={this.handleSubmit}>
+    <LoginForm onSubmit={this.handleSubmit}>
 
     <h2>Sign In</h2>
     <div className='email_input'>
@@ -55,10 +62,9 @@ render() {
     </div>
 
     <input type='submit' value='Submit'/>
-    
 
-    </form>
-    </div>
+    </LoginForm>
+
 
 
 
