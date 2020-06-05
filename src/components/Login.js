@@ -3,8 +3,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Title = styled.div`
-    width: 357px;
-    height: 120px;
+    width: 100%;
 
     font-family: SF Pro Text;
     font-size: 36px;
@@ -13,39 +12,43 @@ const Title = styled.div`
 
     color: rgba(0,0,0,0.75);
     text-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+
+    @media only screen and (min-width: 768px) {
+        margin: 30px 0;
+    }
 `;
 
 const EmailInput = styled.input`
-    width: 392.1px;
+    width: 100%;
     height: 35px;
     background: #FFFFFF;
 `;
 
 const PassInput = styled.input`
-    width: 392.47px;
-    height: 33.19px;
+    width: 100%;
+    height: 35px;
     background: #FFFFFF;
 `;
 
 const LoginButton = styled.input`
-    width: 106px;
+    display: block;
+    width: 100px;
     height: 46px;
+    margin: 10px auto;
+
     background: #771F1F; //#C2C0C0 for grey
     color: #FFFFFF;
     border-radius: 29px;
     font-family: SF Pro Text;
     font-size: 24px;
     text-align: center;
-    margin-left: 125px;
-    
 `;
 
 const App = styled.div`
-    width: 409.7px;
-    height: 207.77px;
-    position: fixed;
-    bottom: 365.23px;
-    right: 1368.3px;
+    display: flex;
+    width: 76%;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 
