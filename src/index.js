@@ -4,6 +4,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import styled from 'styled-components';
 import './index.css';
+import background from './assets/background.jpg';
 
 const Flexbox = styled.div`
   display: flex;
@@ -12,17 +13,17 @@ const Flexbox = styled.div`
 `;
 
 const BackgroundRight = styled.div`
-  background: #712828;
   order: 2;
   width: auto;
   height: 30%;  // TODO: change size to fit <App> component
   z-index: -1;
-  align-items: center;
-  justify-content: center;
   display: none;  // hide
+  background-image: url(${background});
 
   @media only screen and (min-width: 768px) {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 65%;
     height: auto;
   }
@@ -30,11 +31,10 @@ const BackgroundRight = styled.div`
 
 const BackgroundLeft = styled.div`
   background: white;
-  order: 1;
 
   @media only screen and (min-width: 768px) {
     width: 35%;
-    height: 100%;
+    height: auto;
   }
 `;
 
@@ -46,7 +46,7 @@ const Icon = styled.img`
     height: auto;
     min-width: 85px;
     min-height: 85px;
-    margin-top: 96px;  // TODO: consider switching to relative distance from top?
+    margin-top: 30%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -66,6 +66,7 @@ const TransIcon = styled.img`
   }
 `;
 
+{/*
 const BackgroundRightTexture = styled.img`
   filter: grayscale(100%);
   mix-blend-mode: luminosity;
@@ -82,7 +83,9 @@ const BackgroundRightTexture = styled.img`
     display: block;
   }
 `;
+*/}
 
+{/*
 const Laptop = styled.img`
   z-index: 1;
   order: 0;
@@ -97,7 +100,9 @@ const Laptop = styled.img`
     display: block;
   }
 `;
+*/}
 
+{/*
 const Phone = styled.img`
   shadow: 7px 7px 10px rgba(0,0,0,0.5);
   z-index: 1;
@@ -113,6 +118,20 @@ const Phone = styled.img`
     display: block;
   }
 `;
+*/}
+
+const Accessories = styled.img`
+  z-index: 1;
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    width: 54%;
+    min-width: 410px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+`;
 
 const Caption = styled.div`
   font-family: SF Pro Text;
@@ -122,14 +141,11 @@ const Caption = styled.div`
   display: none;  // hide
 
   @media only screen and (min-width: 768px) {
-    position: absolute;
-    padding-top: 250px;
     width: 320px;
-    height: auto;
     display: block;
+    margin: 0 auto;
   }
 `;
-
 
 ReactDOM.render(
   <React.StrictMode>
@@ -140,13 +156,15 @@ ReactDOM.render(
       <App>
       </App>
     </BackgroundLeft>
-      
+
     <BackgroundRight>
-      <BackgroundRightTexture src={require("./assets/background.jpg")}></BackgroundRightTexture>
       <TransIcon src={require("./assets/Burnaby Central Trans Icon.png")}></TransIcon>
-      <Laptop src={require("./assets/Laptop.png")}></Laptop>
-      <Phone src={require("./assets/Phone.png")}></Phone>
-      <Caption>Access the Burnaby Central Application through multiple devices.</Caption>
+      {/*<Laptop src={require("./assets/Laptop.png")}></Laptop>
+      <Phone src={require("./assets/Phone.png")}></Phone>*/}
+      <div>
+        <Accessories src={require("./assets/accessories.png")} />
+        <Caption>Access the Burnaby Central Application through multiple devices.</Caption>
+      </div>
     </BackgroundRight>
 
   </Flexbox>

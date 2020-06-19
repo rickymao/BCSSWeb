@@ -9,24 +9,34 @@ const Title = styled.div`
     font-size: 36px;
     line-height: 40px;
     text-align: center;
+    margin-top: 15px;
 
     color: rgba(0,0,0,0.75);
     text-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+`;
 
-    @media only screen and (min-width: 768px) {
-        margin: 30px 0;
-    }
+const Subtitle = styled.div`
+    width: 100%;
+
+    font-family: SF Pro Text;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+
+    color: rgba(0,0,0,0.75);
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.25);
 `;
 
 const EmailInput = styled.input`
     width: 100%;
-    height: 35px;
+    height: 30px;
+    margin: 15px 0;
     background: #FFFFFF;
 `;
 
 const PassInput = styled.input`
     width: 100%;
-    height: 35px;
+    height: 30px;
     background: #FFFFFF;
 `;
 
@@ -46,11 +56,13 @@ const LoginButton = styled.input`
 
 const App = styled.div`
     display: flex;
-    width: 76%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 65%;
+    margin: 0 auto;
 `;
 
+const Form = styled.form`
+    width: 100%;
+`;
 
 class Login extends React.Component {
 
@@ -91,9 +103,10 @@ render() {
     return (
 
     <App>
-        <form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
 
-            <Title>Burnaby Central Secondary School</Title>
+            <Title>Burnaby Central</Title>
+            <Subtitle>Secondary School</Subtitle>
 
             <div>
                 <EmailInput type="email" id="email" placeholder="Email:" onChange={this.handleEmail}/>
@@ -106,7 +119,7 @@ render() {
             <LoginButton type='submit' value='Login'/>
     
 
-        </form>
+        </Form>
     </App>
 
     );
